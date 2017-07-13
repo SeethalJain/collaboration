@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+   
+  <!--  
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+     <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+     
+  
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" type="text/javascript"></script>
+<link
+	href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css"
+	rel="stylesheet" />
+-->
+<title>Index</title>
+<style>
+body{
+background-image: url("_home/blink.png");
+background-size:1000px 600px;
+background-repeat:no-repeat;
+}
+#nav {
+    position: relative;
+    left: -90px;
+background-color: #336699; // change #000088 (blue) for the color your want
+color: #FFFFFF; // change #FFFFFF (white) for the color you want.
+
+}
+</style>
+</head>
+<body ng-app="app">
+<header>
+            <nav class="navbar">
+            
+           <div class="container-fluid">
+		<button type="button" class="navbar-toggle collapsed" 
+   data-toggle="collapse" data-target="#collapse-example" aria-expanded="false">
+        <span class="sr-only"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+                <div class="navbar-header">
+                    <a class="navbar-brand" href="#">ChatOn</a>
+                </div>
+<div class="collapse navbar-collapse" id="collapse-example">
+                <ul class="nav navbar-nav ">
+                    <li><a href="#home"><i class="fa fa-home"></i> Home</a></li>
+                    <li><a href="#About_Us"><i class="fa fa-user"></i> About Us</a></li>
+                    <li><a href="#register" ng-hide="currentUser.username">Register</a></li>
+                    <li><a href="#login" ng-hide="currentUser.username">Sign in</a>
+                    
+                    <li><a href="#chat" ng-show="currentUser.username">chat </a></li>
+                    <li ng-show="currentUser.username"><a href="#profilepic"><span
+							class="profile-img"> <img
+								src="http://localhost:8090/ChatOnBackEnd/getimage/{{currentUser.username}}"
+								width="50px" height="50px" class="img-rounded"></span></a>
+                    <li><a href="#edituser" ng-show="currentUser.username"><span class="glyphicon glyphicon-user"></span>Edit Profile</a></li>
+                   
+                   
+                   <li class="dropdown"><a href="" class="dropdown-toggle"
+						data-toggle="dropdown" ng-show="currentUser.username"> Job details<b
+							class="caret"></b></a>
+						<ul class="dropdown-menu">
+							<li><a href="#/getAllJobs"> View Job</a></li>
+							<li><a href="#/jobpost" ng-show="currentUser.role=='Admin'">Post
+									Job</a></li>
+						</ul></li>
+                 
+                 <!--  
+                    <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" >
+                    Job Details<span class="caret"></span>
+                    </a>
+                    <ul class="dropdown-menu">
+                    <li><a href="">View Job</a></li>
+                    <li><a href="">Post New Job</a></li>
+                    </ul>                    
+                    </li>
+                    -->
+                    <!--  
+                   <li><a href="#getAllJobs" ng-show="currentUser.username">Get All Jobs</a></li>
+                   <li><a href="#addJob" ng-show="currentUser.role=='Admin'">Post new job</a></li>
+                   -->
+                   <li class="dropdown"><a href="" class="dropdown-toggle"
+						data-toggle="dropdown" ng-show="currentUser.username"> Blog <b
+							class="caret"></b></a>
+						<ul class="dropdown-menu">
+							<li><a href="#/getAllBlogs">view All Blogs</a></li>
+							<li><a href="#blogpost">Post
+									Blog</a></li>
+						</ul></li>
+						
+				<li class="dropdown"><a href="" class="dropdown-toggle"
+						data-toggle="dropdown" ng-show="currentUser.username"> Friend  <b
+							class="caret"></b></a>
+						<ul class="dropdown-menu">
+							<li><a href="#/getAllUsers">view all users</a></li>
+							<li><a href="#pendingRequests">Pending Requests</a></li>
+							<li><a href="#friendslist">listOfFriends</a></li>
+							
+						</ul></li>		
+						
+						
+                   <!--  
+                  <li><a href="#addPost" ng-show="currentUser.username">Add Blog Post </a></li>
+                  <li><a href="#getAllBlogs" ng-show="currentUser.username">View All Blogs</a></li>-->
+                  <li><a href="" ng-show="currentUser.username">Welcome {{currentUser.username}}</a>
+                    <li><a href="" ng-click="logout()" ng-show="currentUser.username">logout</a></li>
+                    
+                </ul>
+            </div>
+            </div>
+            
+            </nav>
+        </header>
+       <div ng-view></div> 
+       
+</body>
+ 
+      
+<!-- Angular JS module -->
+<script type="text/javascript"
+	src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.9/angular.js"></script>
+<!--  Angular JS ngRoute -->
+<script type="text/javascript"
+	src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.9/angular-route.js"></script>
+	<script type="text/javascript"
+	src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.9/angular-cookies.js"></script>
+<!-- BootStrap -->
+<script type="text/javascript"
+	src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.js"></script>
+<script type="text/javascript"
+	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+	<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+	  
+	<link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" />
+      <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.0.0/css/font-awesome.css">
+     
+
+<script type="text/javascript" src="js/app.js"></script>
+<script type="text/javascript" src="_user/usercontroller.js"></script>
+<script type="text/javascript" src="_user/userservice.js"></script>
+<script type="text/javascript" src="_user/editcontroller.js"></script>
+
+<script type="text/javascript" src="job/jobcontroller.js"></script>
+<script type="text/javascript" src="job/jobservice.js"></script>
+
+<script type="text/javascript" src="blog/blogcontroller.js"></script>
+<script type="text/javascript" src="blog/blogservice.js"></script>
+<script type="text/javascript" src="blog/blogdetailcontroller.js"></script>
+<script type="text/javascript" src="friend/friendcontroller.js"></script>
+<script type="text/javascript" src="friend/friendservice.js"></script>
+<script src="js/sockjs/sockjs.js"></script>
+    <script src="js/stomp/dist/stomp.js"></script>
+<script type="text/javascript" src="chat/chatcontroller.js"></script>
+<script type="text/javascript" src="chat/chatservice.js"></script>
+
+
+</html>
